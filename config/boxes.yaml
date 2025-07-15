@@ -1,0 +1,49 @@
+title: "GetApp"
+subtitle: "Your Gateway to Powerful Development Tools"
+# Optional HTML title (will override the plain text title if provided)
+titleHtml: "<span class='text-black'>Get</span><span class='text-primary'>App</span>"
+# Number of columns in the grid (1-4)
+columns: 3
+boxes:
+  # Using emoji icons for simplicity
+  - logo: "📚"
+    title: "Documentation"
+    description: "Comprehensive guides and references"
+    link: "/docs"
+    customClass: "bg-tonal-100"
+  
+  - logo: "ℹ️"
+    title: "Wiki"
+    description: "Knowledge base and community resources"
+    link: "/wiki"
+  
+  - logo: "🐙"
+    title: "GitHub"
+    description: "Source code and repositories"
+    link: "https://github.com"
+  
+  - logo: "</>"
+    title: "API Docs"
+    description: "API documentation and endpoints"
+    link: "/api"
+  
+  - logo: "📊"
+    title: "Dashboard"
+    description: "Monitor and manage your applications"
+    link: "/dashboard"
+  
+  - logo: "📅"
+    title: "Releases"
+    description: "Previous releases"
+    link: "/releases"
+  
+  - logo: "🚀"
+    title: "Quick Start"
+    description: "Get started in minutes"
+    link: "/quickstart"
+    customClass: "bg-tonal-200"
+  
+  - logo: "⬇️"
+    title: "Resources"
+    description: "Additional development resources"
+    link: "/resources"

@@ -1,0 +1,94 @@
+:root {
+  /** Base colors */
+  --clr-dark-a0: #000000;
+  --clr-light-a0: #ffffff;
+
+  /** Theme primary colors */
+  --clr-primary-a0: #5648d9;
+  --clr-primary-a10: #6e5bde;
+  --clr-primary-a20: #836ee3;
+  --clr-primary-a30: #9782e7;
+  --clr-primary-a40: #aa96ec;
+  --clr-primary-a50: #bbaaf0;
+
+  /** Theme surface colors */
+  --clr-surface-a0: #141313;
+  --clr-surface-a10: #292828;
+  --clr-surface-a20: #403f3f;
+  --clr-surface-a30: #585858;
+  --clr-surface-a40: #727171;
+  --clr-surface-a50: #8c8c8c;
+
+  /** Theme tonal surface colors */
+  --clr-surface-tonal-a0: #241d35;
+  --clr-surface-tonal-a10: #393249;
+  --clr-surface-tonal-a20: #4f485d;
+  --clr-surface-tonal-a30: #666073;
+  --clr-surface-tonal-a40: #7e7889;
+  --clr-surface-tonal-a50: #96929f;
+}
+
+/* Apply dark theme to the entire site */
+body {
+  background-color: var(--clr-surface-a0);
+  color: var(--clr-light-a0);
+}
+
+/* Header styling */
+header {
+  background-color: var(--clr-surface-a10);
+  border-bottom: 1px solid var(--clr-surface-a20);
+}
+
+/* App box styling */
+.app-box {
+  background-color: var(--clr-surface-a10);
+  border: 1px solid var(--clr-surface-a20);
+  color: var(--clr-light-a0);
+  transition: all 0.3s ease;
+}
+
+.app-box:hover {
+  background-color: var(--clr-surface-tonal-a10);
+  border-color: var(--clr-primary-a20);
+  box-shadow: 0 4px 12px rgba(86, 72, 217, 0.2);
+}
+
+.app-title {
+  color: var(--clr-primary-a30);
+}
+
+.app-description {
+  color: var(--clr-surface-a50);
+}
+
+.app-icon {
+  color: var(--clr-primary-a20);
+}
+
+/* Custom background classes */
+.bg-blue-50 {
+  background-color: var(--clr-surface-tonal-a0) !important;
+  border-color: var(--clr-primary-a10) !important;
+}
+
+.bg-green-50 {
+  background-color: var(--clr-surface-tonal-a10) !important;
+  border-color: var(--clr-primary-a20) !important;
+}
+
+/* Footer styling */
+footer {
+  background-color: var(--clr-surface-a10);
+  border-top: 1px solid var(--clr-surface-a20);
+  color: var(--clr-surface-a50);
+}
+
+/* Links */
+a {
+  color: var(--clr-primary-a30);
+}
+
+a:hover {
+  color: var(--clr-primary-a40);
+}

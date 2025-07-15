@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import dark theme */
+@import './dark-theme.css';
+
+body {
+  @apply bg-gray-50;
+  background-color: var(--clr-surface-a0);
+  color: var(--clr-light-a0);
+}
+
+.app-box {
+  @apply rounded-lg shadow-md p-6 text-center transition-all hover:shadow-lg;
+  background-color: var(--clr-surface-a10);
+  border: 1px solid var(--clr-surface-a20);
+}
+
+.app-icon {
+  @apply text-4xl mb-4 mx-auto;
+  color: var(--clr-primary-a20);
+}
+
+.app-title {
+  @apply text-xl font-semibold mb-2;
+  color: var(--clr-primary-a30);
+}
+
+.app-description {
+  @apply text-sm mb-4;
+  color: var(--clr-surface-a50);
+}

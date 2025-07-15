@@ -1,0 +1,38 @@
+title: "MyApps"
+subtitle: "My Collection of Useful Applications"
+titleHtml: "<span class='text-black font-bold'>My<span class='text-primary'>Apps</span></span>"
+columns: 2
+boxes:
+  - logo: "📚"
+    title: "Settings"
+    description: "Configure your preferences"
+    link: "/settings"
+    customClass: "bg-gray-50"
+  
+  - logo: "🐙"
+    title: "Slack Channel"
+    description: "Join our community"
+    link: "/slack"
+    customClass: "bg-blue-50"
+  
+  - logo: "📅"
+    title: "Help Center"
+    description: "Get assistance and support"
+    link: "/help"
+  
+  - logo: "🚀"
+    title: "Analytics"
+    description: "View performance metrics"
+    link: "/analytics"
+    customClass: "bg-green-50"
+    
+  - logo: "👥"
+    title: "Profile"
+    description: "Manage your account"
+    link: "/profile"
+    
+  - logo: "fab:twitter"
+    title: "Twitter"
+    description: "Follow us on Twitter"
+    link: "https://twitter.com"
+    customClass: "bg-blue-100"

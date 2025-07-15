@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: getapp-site
+  labels:
+    app: getapp-site
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: getapp-site
+  template:
+    metadata:
+      labels:
+        app: getapp-site
+    spec:
+      containers:
+      - name: getapp-site
+        image: getapp-site:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 3000
+          name: http
+        resources:
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
+          requests:
+            cpu: "200m"
+            memory: "256Mi"
+        volumeMounts:
+        - name: config-volume
+          mountPath: /app/boxes.yaml
+          subPath: boxes.yaml
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 3000
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 3000
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      volumes:
+      - name: config-volume
+        configMap:
+          name: getapp-site-config
