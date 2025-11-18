@@ -1,8 +1,22 @@
-# GetApp Site
+# YAML Site Generator
 
-A customizable landing page inspired by GetApp, featuring configurable boxes that can be managed via environment variables or a YAML file.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Node Version](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen)](https://nodejs.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-14.0-black)](https://nextjs.org/)
+[![Docker](https://img.shields.io/badge/Docker-Ready-blue)](https://www.docker.com/)
+[![Kubernetes](https://img.shields.io/badge/Kubernetes-Ready-326CE5)](https://kubernetes.io/)
 
-![GetApp Site Generator](./site-generator.png)
+A customizable landing page generator with YAML configuration, featuring responsive design, dark theme, and multiple deployment options.
+
+![YAML Site Generator](./site-generator.png)
+
+## 📚 Documentation
+
+- [Contributing Guidelines](CONTRIBUTING.md)
+- [Code of Conduct](CODE_OF_CONDUCT.md)
+- [Security Policy](SECURITY.md)
+- [Changelog](CHANGELOG.md)
+- [License](LICENSE)
 
 ## Table of Contents
 - [Features](#features)
@@ -39,8 +53,8 @@ A customizable landing page inspired by GetApp, featuring configurable boxes tha
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/getapp-site-cts.git
-cd getapp-site-cts
+git clone https://github.com/yourusername/yaml-site-generator.git
+cd yaml-site-generator
 
 # Install dependencies
 npm install
@@ -55,8 +69,8 @@ npm run dev
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/getapp-site-cts.git
-cd getapp-site-cts
+git clone https://github.com/yourusername/yaml-site-generator.git
+cd yaml-site-generator
 
 # Start with Docker Compose
 docker-compose up -d
