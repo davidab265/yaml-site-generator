@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: getapp-site
+  name: yaml-site
   labels:
-    app: getapp-site
+    app: yaml-site
 spec:
   type: ClusterIP
   ports:
@@ -12,4 +12,4 @@ spec:
     protocol: TCP
     name: http
   selector:
-    app: getapp-site
+    app: yaml-site

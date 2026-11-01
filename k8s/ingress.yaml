@@ -1,18 +1,18 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: getapp-site-ingress
+  name: yaml-site-ingress
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: getapp.example.com  # Replace with your actual domain
+  - host: my-site.example.com  # Replace with your actual domain
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: getapp-site
+            name: yaml-site
             port:
               number: 80

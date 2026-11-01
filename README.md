@@ -1,14 +1,25 @@
 # YAML Site Generator
 
+[![CI](https://github.com/davidab265/yaml-site-generator/actions/workflows/ci.yml/badge.svg)](https://github.com/davidab265/yaml-site-generator/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node Version](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen)](https://nodejs.org/)
 [![Next.js](https://img.shields.io/badge/Next.js-14.0-black)](https://nextjs.org/)
 [![Docker](https://img.shields.io/badge/Docker-Ready-blue)](https://www.docker.com/)
 [![Kubernetes](https://img.shields.io/badge/Kubernetes-Ready-326CE5)](https://kubernetes.io/)
+[![Security Policy](https://img.shields.io/badge/security-policy-blueviolet)](./SECURITY.md)
 
 A customizable landing page generator with YAML configuration, featuring responsive design, dark theme, and multiple deployment options.
 
-![YAML Site Generator](./site-generator.png)
+## 📸 Screenshots
+
+<p align="center">
+  <img src="images/site-generator.png" alt="Default 3-column layout" width="46%" />
+  <img src="images/site-generator-2col.png" alt="2-column layout" width="46%" />
+</p>
+<p align="center">
+  <img src="images/site-generator-4col.png" alt="4-column layout" width="46%" />
+  <img src="images/site-generator-mobile.png" alt="Mobile view" width="30%" />
+</p>
 
 ## 📚 Documentation
 
@@ -53,7 +64,7 @@ A customizable landing page generator with YAML configuration, featuring respons
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/yaml-site-generator.git
+git clone https://github.com/davidab265/yaml-site-generator.git
 cd yaml-site-generator
 
 # Install dependencies
@@ -69,7 +80,7 @@ npm run dev
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/yaml-site-generator.git
+git clone https://github.com/davidab265/yaml-site-generator.git
 cd yaml-site-generator
 
 # Start with Docker Compose
@@ -93,11 +104,11 @@ Edit the `boxes.yaml` file to add, remove, or modify boxes:
 
 ```yaml
 # Site title (plain text)
-title: "GetApp"
+title: "My Site"
 # Site subtitle
 subtitle: "Your Gateway to Powerful Development Tools"
 # Optional HTML title (will override the plain text title if provided)
-titleHtml: "<span class='text-light-a0'>Get</span><span class='text-primary-light'>App</span>"
+titleHtml: "<span class='text-light-a0'>My</span><span class='text-primary-light'>Site</span>"
 # Number of columns in the grid (1-4)
 columns: 3
 boxes:
@@ -115,9 +126,9 @@ Copy `.env.example` to `.env` and customize the variables:
 
 ```
 # Site Configuration
-SITE_TITLE=GetApp
+SITE_TITLE=My Site
 SITE_SUBTITLE=Your Gateway to Powerful Development Tools
-SITE_TITLE_HTML=<span class='text-light-a0'>Get</span><span class='text-primary-light'>App</span>
+SITE_TITLE_HTML=<span class='text-light-a0'>My</span><span class='text-primary-light'>Site</span>
 SITE_COLUMNS=3
 
 # Box 1
@@ -200,10 +211,10 @@ docker-compose down
 
 ```bash
 # Build the image
-docker build -t getapp-site .
+docker build -t yaml-site .
 
 # Run the container
-docker run -p 3000:3000 -v $(pwd)/boxes.yaml:/app/boxes.yaml -v $(pwd)/.env:/app/.env getapp-site
+docker run -p 3000:3000 -v $(pwd)/boxes.yaml:/app/boxes.yaml -v $(pwd)/.env:/app/.env yaml-site
 ```
 
 ### Kubernetes Deployment
@@ -215,7 +226,7 @@ The application includes Kubernetes manifests in the `k8s` directory:
 kubectl apply -k k8s/
 
 # Check deployment status
-kubectl get pods -l app=getapp-site
+kubectl get pods -l app=yaml-site
 ```
 
 The Kubernetes setup includes:
@@ -224,6 +235,14 @@ The Kubernetes setup includes:
 - Service for internal access
 - Ingress for external access
 
+## Community & Contributing
+
+We welcome contributions of all kinds! Please read our [CONTRIBUTING.md](./CONTRIBUTING.md) guide and [Code of Conduct](./CODE_OF_CONDUCT.md) before submitting pull requests.
+
+- **Found a bug?** Open an issue using the [Bug Report template](https://github.com/davidab265/yaml-site-generator/issues/new?template=bug_report.yml).
+- **Have an idea?** Suggest an enhancement via [Feature Request](https://github.com/davidab265/yaml-site-generator/issues/new?template=feature_request.yml).
+- **Security issue?** Follow our confidential [Security Policy](./SECURITY.md).
+
 ## License
 
-MIT
+[MIT License](./LICENSE) © 2025 YAML Site Generator Contributors.

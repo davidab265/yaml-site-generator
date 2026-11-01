@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  getapp-site:
+  yaml-site:
     build:
       context: .
       dockerfile: Dockerfile
@@ -11,6 +11,7 @@ services:
       - NODE_ENV=production
     volumes:
       - ./boxes.yaml:/app/boxes.yaml
-      - ./custom-boxes.yaml:/app/custom-boxes.yaml
-      - ./.env:/app/.env
+      # Optional overrides — create these files first (see custom-boxes.yaml.example / .env.example)
+      # - ./custom-boxes.yaml:/app/custom-boxes.yaml
+      # - ./.env:/app/.env
     restart: unless-stopped

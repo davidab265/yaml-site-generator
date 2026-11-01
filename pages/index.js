@@ -25,8 +25,8 @@ export default function Home({ serverConfig }) {
             <span dangerouslySetInnerHTML={{ __html: config.titleHtml }} />
           ) : (
             <>
-              <span className="text-light-a0">Get</span>
-              <span className="text-primary-light">App</span>
+              <span className="text-light-a0">My</span>
+              <span className="text-primary-light">Site</span>
             </>
           )}
         </h1>

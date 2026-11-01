@@ -1,7 +1,7 @@
-title: "GetApp"
+title: "My Site"
 subtitle: "Your Gateway to Powerful Development Tools"
 # Optional HTML title (will override the plain text title if provided)
-titleHtml: "<span class='text-black'>Get</span><span class='text-primary'>App</span>"
+titleHtml: "<span class='text-black'>My</span><span class='text-primary'>Site</span>"
 # Number of columns in the grid (1-4)
 columns: 3
 boxes:

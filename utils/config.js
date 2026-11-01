@@ -5,7 +5,7 @@ import yaml from 'js-yaml';
 export function getConfig() {
   // Default configuration
   const defaultConfig = {
-    title: 'GetApp',
+    title: 'My Site',
     subtitle: 'Your Gateway to Powerful Development Tools',
     columns: 3,
     boxes: []

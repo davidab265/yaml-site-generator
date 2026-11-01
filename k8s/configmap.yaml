@@ -1,15 +1,15 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: getapp-site-config
+  name: yaml-site-config
 data:
   boxes.yaml: |
     # Site title (plain text)
-    title: "GetApp"
+    title: "My Site"
     # Site subtitle
     subtitle: "Your Gateway to Powerful Development Tools"
     # Optional HTML title (will override the plain text title if provided)
-    titleHtml: "<span class='text-light-a0'>Get</span><span class='text-primary-light'>App</span>"
+    titleHtml: "<span class='text-light-a0'>My</span><span class='text-primary-light'>Site</span>"
     # Number of columns in the grid (1-4)
     columns: 3
     boxes:

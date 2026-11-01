@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: getapp-site
+  name: yaml-site
   labels:
-    app: getapp-site
+    app: yaml-site
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: getapp-site
+      app: yaml-site
   template:
     metadata:
       labels:
-        app: getapp-site
+        app: yaml-site
     spec:
       containers:
-      - name: getapp-site
-        image: getapp-site:latest
+      - name: yaml-site
+        image: yaml-site:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3000
@@ -47,4 +47,4 @@ spec:
       volumes:
       - name: config-volume
         configMap:
-          name: getapp-site-config
+          name: yaml-site-config

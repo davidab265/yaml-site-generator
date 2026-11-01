@@ -34,7 +34,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Example configurations and documentation
 
 #### Features
-- ✨ Modern, clean design inspired by GetApp
+- ✨ Modern, clean design inspired by developer portals
 - 🎨 Fully customizable with YAML or environment variables
 - 🚀 Fast server-side rendering with Next.js
 - 🐳 Docker and Kubernetes ready

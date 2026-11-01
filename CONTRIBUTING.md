@@ -43,7 +43,7 @@ We welcome suggestions for new features or improvements! Please open an issue wi
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/yaml-site-generator.git
+   git clone https://github.com/davidab265/yaml-site-generator.git
    cd yaml-site-generator
    ```
 

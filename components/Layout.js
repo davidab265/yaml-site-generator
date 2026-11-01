@@ -14,7 +14,7 @@ export default function Layout({ children, title, description }) {
       </main>
 
       <footer className="mt-16 text-center text-sm" style={{ color: 'var(--clr-surface-a50)' }}>
-        <p>© {new Date().getFullYear()} GetApp. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} YAML Site Generator. All rights reserved.</p>
       </footer>
     </div>
   );
