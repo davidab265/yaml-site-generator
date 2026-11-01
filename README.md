@@ -1,62 +1,78 @@
 # YAML Site Generator
 
-[![CI](https://github.com/davidab265/yaml-site-generator/actions/workflows/ci.yml/badge.svg)](https://github.com/davidab265/yaml-site-generator/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Node Version](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen)](https://nodejs.org/)
-[![Next.js](https://img.shields.io/badge/Next.js-14.0-black)](https://nextjs.org/)
-[![Docker](https://img.shields.io/badge/Docker-Ready-blue)](https://www.docker.com/)
-[![Kubernetes](https://img.shields.io/badge/Kubernetes-Ready-326CE5)](https://kubernetes.io/)
-[![Security Policy](https://img.shields.io/badge/security-policy-blueviolet)](./SECURITY.md)
-
-A customizable landing page generator with YAML configuration, featuring responsive design, dark theme, and multiple deployment options.
-
-## 📸 Screenshots
-
 <p align="center">
-  <img src="images/site-generator.png" alt="Default 3-column layout" width="46%" />
-  <img src="images/site-generator-2col.png" alt="2-column layout" width="46%" />
-</p>
-<p align="center">
-  <img src="images/site-generator-4col.png" alt="4-column layout" width="46%" />
-  <img src="images/site-generator-mobile.png" alt="Mobile view" width="30%" />
+  <strong>A customizable landing-page generator driven by a single YAML config.</strong><br />
+  Responsive design, dark theme, multiple logo options — deploys via npm, Docker Compose, or Kubernetes.
 </p>
 
-## 📚 Documentation
+<p align="center">
+  <a href="https://github.com/davidab265/yaml-site-generator/actions/workflows/ci.yml"><img src="https://github.com/davidab265/yaml-site-generator/actions/workflows/ci.yml/badge.svg" alt="CI Status" /></a>
+  <a href="./LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License" /></a>
+  <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen.svg" alt="Node.js Version" /></a>
+  <a href="https://nextjs.org/"><img src="https://img.shields.io/badge/Next.js-14.0-black.svg" alt="Next.js 14" /></a>
+  <a href="https://kubernetes.io/"><img src="https://img.shields.io/badge/kubernetes-ready-326CE5.svg" alt="Kubernetes Ready" /></a>
+  <a href="./SECURITY.md"><img src="https://img.shields.io/badge/security-policy-blueviolet.svg" alt="Security Policy" /></a>
+</p>
 
-- [Contributing Guidelines](CONTRIBUTING.md)
-- [Code of Conduct](CODE_OF_CONDUCT.md)
-- [Security Policy](SECURITY.md)
-- [Changelog](CHANGELOG.md)
-- [License](LICENSE)
+---
 
-## Table of Contents
-- [Features](#features)
-- [Quick Start](#quick-start)
-- [Configuration](#configuration)
-  - [YAML Configuration](#yaml-configuration)
-  - [Environment Variables](#environment-variables)
-- [Logo Options](#logo-options)
-  - [Emoji Icons](#emoji-icons)
-  - [Font Awesome Icons](#font-awesome-icons)
-  - [SVG and Image URLs](#svg-and-image-urls)
-- [Customization](#customization)
-- [Deployment Options](#deployment-options)
-  - [Standard Deployment](#standard-deployment)
-  - [Docker Deployment](#docker-deployment)
-  - [Kubernetes Deployment](#kubernetes-deployment)
-- [License](#license)
+## Overview
 
-## Features
+**YAML Site Generator** builds a modern, dark-themed landing page of link boxes (documentation, dashboards, tools, portals) from a single `boxes.yaml` file — no code changes required:
 
-- Modern, responsive design with dark theme support
-- Configurable boxes with logos, titles, descriptions, and links
-- Multiple logo options: emoji, Font Awesome icons, SVG, and image URLs
-- Custom styling for individual boxes
-- Adjustable grid layout (1-4 columns)
-- Configuration via YAML file or environment variables
-- Server-side rendering with Next.js
-- Fully dockerized for easy deployment
-- Kubernetes deployment ready
+- **YAML-driven**: Title, subtitle, columns (1–4), and unlimited boxes defined in one config file
+- **Two config sources**: `boxes.yaml` or environment variables (YAML takes precedence)
+- **Multiple logo types**: Emoji, Font Awesome (`fa:`/`fab:`/`far:`), inline SVG, and image URLs
+- **Per-box styling**: Optional `customClass` for individual card styling
+- **Deployment-ready**: Next.js standalone build, multi-stage Dockerfile, and a Kustomize `k8s/` overlay
+
+---
+
+## Screenshots
+
+<p align="center">
+  <strong>1. Default Three-Column Layout</strong><br />
+  <em>Dark-themed responsive grid rendered entirely from <code>boxes.yaml</code>.</em>
+</p>
+
+<p align="center">
+  <img src="images/site-generator.png" alt="Default 3-column layout" width="900" />
+</p>
+
+---
+
+<p align="center">
+  <strong>2. Two-Column Layout</strong><br />
+  <em>Wider cards for fewer, richer links — set <code>columns: 2</code>.</em>
+</p>
+
+<p align="center">
+  <img src="images/site-generator-2col.png" alt="2-column layout" width="900" />
+</p>
+
+---
+
+<p align="center">
+  <strong>3. Four-Column Compact Grid</strong><br />
+  <em>Compact quick-links hub — set <code>columns: 4</code>.</em>
+</p>
+
+<p align="center">
+  <img src="images/site-generator-4col.png" alt="4-column layout" width="900" />
+</p>
+
+---
+
+<p align="center">
+  <strong>4. Mobile View</strong><br />
+  <em>Responsive down to small screens with the same config.</em>
+</p>
+
+<p align="center">
+  <img src="images/site-generator-mobile.png" alt="Mobile view" width="420" />
+</p>
+
+---
 
 ## Quick Start
 
@@ -72,9 +88,9 @@ npm install
 
 # Run the development server
 npm run dev
-
-# Access at http://localhost:3000
 ```
+
+Open `http://localhost:3000` in your browser.
 
 ### Docker Quick Start
 
@@ -85,9 +101,11 @@ cd yaml-site-generator
 
 # Start with Docker Compose
 docker-compose up -d
-
-# Access at http://localhost:3000
 ```
+
+Open `http://localhost:3000` in your browser.
+
+---
 
 ## Configuration
 
@@ -124,32 +142,30 @@ boxes:
 
 Copy `.env.example` to `.env` and customize the variables:
 
-```
-# Site Configuration
-SITE_TITLE=My Site
-SITE_SUBTITLE=Your Gateway to Powerful Development Tools
-SITE_TITLE_HTML=<span class='text-light-a0'>My</span><span class='text-primary-light'>Site</span>
-SITE_COLUMNS=3
+| Variable | Description | Default |
+|---|---|---|
+| `SITE_TITLE` | Site title (plain text) | `My Site` |
+| `SITE_SUBTITLE` | Site subtitle | `Your Gateway to Powerful Development Tools` |
+| `SITE_TITLE_HTML` | Optional HTML title (overrides `SITE_TITLE`) | — |
+| `SITE_COLUMNS` | Number of grid columns (1–4) | `3` |
+| `BOX_<n>_LOGO` | Logo for box `<n>` (emoji, `fa:` icon, SVG, or image URL) | — |
+| `BOX_<n>_TITLE` | Title for box `<n>` | — |
+| `BOX_<n>_DESCRIPTION` | Description for box `<n>` | — |
+| `BOX_<n>_LINK` | Link for box `<n>` | — |
+| `BOX_<n>_CUSTOM_CLASS` | Optional CSS class for box `<n>` | — |
+| `CONFIG_PATH` | Optional path to an alternate YAML config file | `boxes.yaml` |
 
-# Box 1
-BOX_1_LOGO=📚
-BOX_1_TITLE=Documentation
-BOX_1_DESCRIPTION=Comprehensive guides and references
-BOX_1_LINK=/docs
-BOX_1_CUSTOM_CLASS=bg-tonal-100
-```
+---
 
 ## Logo Options
 
 ### Emoji Icons
 
-Use emoji icons for a simple and effective approach:
-
 ```yaml
 logo: "📚"  # In YAML
 ```
 
-```
+```env
 BOX_1_LOGO=📚  # In environment variables
 ```
 
@@ -158,8 +174,8 @@ BOX_1_LOGO=📚  # In environment variables
 Use the format `fa:icon-name`, `fab:icon-name`, or `far:icon-name`:
 
 ```yaml
-logo: "fa:book"      # Solid style
-logo: "fab:github"   # Brand style
+logo: "fa:book"       # Solid style
+logo: "fab:github"    # Brand style
 logo: "far:calendar"  # Regular style
 ```
 
@@ -173,12 +189,16 @@ logo: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">...</svg>'
 logo: 'https://example.com/image.png'
 ```
 
+---
+
 ## Customization
 
 - **Styling**: Edit `tailwind.config.js` and `styles/globals.css`
 - **Dark Theme**: Customize colors in `styles/dark-theme.css`
 - **Layout**: Adjust columns using the `columns` property
 - **Individual Boxes**: Add custom CSS classes using the `customClass` property
+
+---
 
 ## Deployment Options
 
@@ -213,13 +233,13 @@ docker-compose down
 # Build the image
 docker build -t yaml-site .
 
-# Run the container
-docker run -p 3000:3000 -v $(pwd)/boxes.yaml:/app/boxes.yaml -v $(pwd)/.env:/app/.env yaml-site
+# Run the container (mount your config)
+docker run -p 3000:3000 -v $(pwd)/boxes.yaml:/app/boxes.yaml yaml-site
 ```
 
 ### Kubernetes Deployment
 
-The application includes Kubernetes manifests in the `k8s` directory:
+The application includes a Kustomize overlay in the `k8s/` directory:
 
 ```bash
 # Apply all resources
@@ -230,10 +250,22 @@ kubectl get pods -l app=yaml-site
 ```
 
 The Kubernetes setup includes:
-- ConfigMap for the boxes.yaml configuration
+
+- ConfigMap for the `boxes.yaml` configuration
 - Deployment with 2 replicas
 - Service for internal access
-- Ingress for external access
+- Ingress for external access (edit `k8s/ingress.yaml` to set your host)
+
+---
+
+## Testing
+
+```bash
+npm run lint    # Lint the codebase
+npm run build   # Verify the production build
+```
+
+---
 
 ## Community & Contributing
 
@@ -242,6 +274,9 @@ We welcome contributions of all kinds! Please read our [CONTRIBUTING.md](./CONTR
 - **Found a bug?** Open an issue using the [Bug Report template](https://github.com/davidab265/yaml-site-generator/issues/new?template=bug_report.yml).
 - **Have an idea?** Suggest an enhancement via [Feature Request](https://github.com/davidab265/yaml-site-generator/issues/new?template=feature_request.yml).
 - **Security issue?** Follow our confidential [Security Policy](./SECURITY.md).
+- **Changelog**: See [CHANGELOG.md](./CHANGELOG.md) for release history.
+
+---
 
 ## License
 
